@@ -1,6 +1,40 @@
-async function getZipWeatherData() {
-  const zipcode = document.getElementById("zipcode").value;
+function validateForm() {
+  // Obtém os valores dos campos
+  var firstName = document.getElementById("firstName").value;
+  var email = document.getElementById("email").value;
+  var zipcode = document.getElementById("zipcode").value;
+  var lat = document.getElementById("lat").value;
+  var lon = document.getElementById("lon").value;
 
+  // Verifica se os campos estão vazios
+  if (firstName === "") {
+    alert("Por favor, insira o Primeiro Nome.");
+    return false;
+  }
+  if (email === "") {
+    alert("Por favor, insira o Email.");
+    return false;
+  }
+  if (zipcode === "") {
+    alert("Por favor, insira o CEP.");
+    return false;
+  }
+  if (lat === "") {
+    alert("Por favor, insira a Latitude.");
+    return false;
+  }
+  if (lon === "") {
+    alert("Por favor, insira a Longitude.");
+    return false;
+  }
+
+  // Se todos os campos estiverem preenchidos, retorna true
+  getZipWeatherData();
+  return true;
+}
+
+async function getZipWeatherData() {
+  var zipcode = document.getElementById("zipcode").value;
   try {
     const response = await fetch(`https://viacep.com.br/ws/${zipcode}/json/`);
     const data = await response.json();

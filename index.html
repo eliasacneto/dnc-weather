@@ -27,16 +27,19 @@
       <div class="label-form">
         <label for="firstName"> Primeiro Nome: </label>
         <input type="text" id="firstName" name="firstName" placeholder="Insira seu primeiro nome" required>
+        <small> <span class="warning"></span></small>
       </div>
       <div class="label-form">
         <label for="email"> Email: </label>
         <input type="email" id="email" name="email" placeholder="Insira seu email" required>
+        <small><span class="warning"></span></small>
       </div>
       <div class="label-form">
         <label for="zipcode"> Digite o CEP: </label>
         <input type="text" id="zipcode" name="zipcode" placeholder="Insira o CEP" maxlength="9"
           onkeypress="zipMask(this)" required>
         <small><span class="error" id="errorZipcode"></span></small>
+        <small><span class="warning"></span></small>
       </div>
       <div class="label-form">
         <label> Digite a latitute e longitude para saber a previsão: </label>
@@ -47,7 +50,7 @@
         <small><span class="error" id="errorLatLon"></span></small>
 
       </div>
-      <button type="button" class="btn-form" onclick="getZipWeatherData()"> Acessar</button>
+      <button type="button" class="btn-form" id="btn-form" onclick="validateForm()"> Acessar</button>
     </form>
 
     <div class="section" id="address">
