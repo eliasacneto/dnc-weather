@@ -127,12 +127,15 @@ form .input-2 {
   color: #fff;
   border: none;
   border-radius: 8px;
-
+  cursor: pointer;
   font-size: 18px;
   height: 40px;
   width: 100%;
   margin-top: 20px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.btn-form:hover {
+  background-color: #3c8af0;
 }
 
 .error {
